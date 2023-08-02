@@ -44,7 +44,7 @@ const Layout = ({ children = null }) => {
             <Link href="/">
               <a>
                 <Image
-                  src="/logo.svg"
+                  src="/../public/logo.png"
                   alt="logo"
                   layout="fill"
                   objectFit="contain"
