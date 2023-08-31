@@ -28,8 +28,6 @@ export function UserProvider({ children = null }) {
   })
 
   const user = data?.user
-  console.log(data)
-  console.log(user)
 
   if (error) {
     return <p>Something went wrong. Try to refresh the page.</p>

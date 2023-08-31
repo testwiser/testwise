@@ -1,13 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from '../styles/components/Layout.module.css';
+import stylesHome from '../styles/pages/Home.module.css';
 
-import React, { Fragment } from 'react';
+
+import React from 'react';
 import { useUserContext } from '../UserProvider';
 import { useSignOut } from '@nhost/nextjs'
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, Transition } from '@headlessui/react';
+import { Menu } from '@headlessui/react';
 import {
-  ChevronDownIcon,
   HomeIcon,
   LogoutIcon,
   UserIcon,
@@ -44,7 +46,7 @@ const Layout = ({ children = null }) => {
             <Link href="/">
               <a>
                 <Image
-                  src="/../public/logo.png"
+                  src="/logo.png"
                   alt="logo"
                   layout="fill"
                   objectFit="contain"
@@ -53,59 +55,61 @@ const Layout = ({ children = null }) => {
             </Link>
           </div>
 
-          <Menu as="div" className={styles.menu}>
-            <Menu.Button className={styles['menu-button']}>
-              <Avatar src={user?.avatarUrl} alt={user?.displayName} />
-              <ChevronDownIcon />
-            </Menu.Button>
-            <Transition
-              as={Fragment}
-              enter={styles['menu-transition-enter']}
-              enterFrom={styles['menu-transition-enter-from']}
-              enterTo={styles['menu-transition-enter-to']}
-              leave={styles['menu-transition-leave']}
-              leaveFrom={styles['menu-transition-leave-from']}
-              leaveTo={styles['menu-transition-leave-to']}
-            >
-              <Menu.Items className={styles['menu-items-container']}>
-                <div className={styles['menu-header']}>
-                  <Avatar src={user?.avatarUrl} alt={user?.displayName} />
-                  <div className={styles['user-details']}>
-                    <span>{user?.displayName}</span>
-                    <span className={styles['user-email']}>{user?.email}</span>
-                  </div>
-                </div>
+          <div className="navbar bg-base-100 flex justify-end">
+            <ul className="menu menu-horizontal">
+              <li><a>Link</a></li>
+              <li>
+                <details>
+                  <summary>
+                    <Avatar src={user?.avatarUrl} alt={user?.displayName} />
+                    {user?.displayName}
+                  </summary>
+                  <Menu as="div" className={styles.menu}>
 
-                <div className={styles['menu-items']}>
-                  {menuItems.map(({ label, href, onClick, icon: Icon }) => (
-                    <div key={label} className={styles['menu-item']}>
-                      <Menu.Item>
-                        {href ? (
-                          <Link href={href}>
-                            <a>
-                              <Icon />
-                              <span>{label}</span>
-                            </a>
-                          </Link>
-                        ) : (
-                          <button onClick={onClick}>
-                            <Icon />
-                            <span>{label}</span>
-                          </button>
-                        )}
-                      </Menu.Item>
+                    <div className="p-2 bg-base-100">
+                      {menuItems.map(({ label, href, onClick, icon: Icon }) => (
+                        <div key={label} className={styles['menu-item']}>
+                          <Menu.Item>
+                            {href ? (
+                              <Link href={href}>
+                                <a>
+                                  <Icon />
+                                  <span>{label}</span>
+                                </a>
+                              </Link>
+                            ) : (
+                              <button onClick={onClick}>
+                                <Icon />
+                                <span>{label}</span>
+                              </button>
+                            )}
+                          </Menu.Item>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </Menu.Items>
-            </Transition>
-          </Menu>
+                  </Menu>
+                </details>
+              </li>
+            </ul>
+          </div>
         </div>
-      </header>
+      </header >
 
       <main className={styles.main}>
-        <div className={styles['main-container']}>{children}</div>
+        <div className="divide-y divide-solid" >
+          <div className="pt-10 pb-10 pl-10 divide-y divide-solid">
+            <h2 className={stylesHome.title}>Dashboard</h2>
+            <p className={stylesHome['welcome-text']}>
+              Welcome, {user?.metadata?.firstName || 'stranger'}{' '}
+              <span role="img" alt="hello">
+                👋
+              </span>
+            </p>
+          </div>
+        </div>
+        <div className={[styles['main-container'], 'flex items-stretch']}>{children}</div>
       </main>
+
     </div>
   );
 };
