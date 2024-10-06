@@ -46,7 +46,7 @@ const Layout = ({ children = null }) => {
             <Link href="/">
               <a>
                 <Image
-                  src="/logo.png"
+                  src="/logo2.png"
                   alt="logo"
                   layout="fill"
                   objectFit="contain"
@@ -94,21 +94,7 @@ const Layout = ({ children = null }) => {
           </div>
         </div>
       </header >
-
-      <main className={styles.main}>
-        <div className="divide-y divide-solid" >
-          <div className="pt-10 pb-10 pl-10 divide-y divide-solid">
-            <h2 className={stylesHome.title}>Dashboard</h2>
-            <p className={stylesHome['welcome-text']}>
-              Welcome, {user?.metadata?.firstName || 'stranger'}{' '}
-              <span role="img" alt="hello">
-                👋
-              </span>
-            </p>
-          </div>
-        </div>
-        <div className={[styles['main-container'], 'flex items-stretch']}>{children}</div>
-      </main>
+      <div className={[styles['main-container'], 'flex items-stretch']}>{children}</div>
 
     </div>
   );

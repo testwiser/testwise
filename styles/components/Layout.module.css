@@ -51,7 +51,7 @@
 
 .logo-wrapper {
   position: relative;
-  width: 6rem;
+  width: 3rem;
 }
 
 .menu {
@@ -217,8 +217,6 @@
   composes: container;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: 3rem;
   padding-bottom: 3rem;
 }
