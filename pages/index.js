@@ -23,7 +23,7 @@ const Home = () => {
         <h2 className={stylesHome.title}>Dashboard</h2>
         <p className={stylesHome['welcome-text']}>
           Welcome, {user?.metadata?.firstName || 'stranger'}{' '}
-          <span role="img" alt="hello-message">
+          <span role="img" alt="hello-msg">
             👋
           </span>
         </p>
