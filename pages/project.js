@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import SidebarMenu from '../components/SideBar';
+import SidebarMenu from '../components/Sidebar';
 
 const Project = () => {
   return (

@@ -1,7 +1,6 @@
 import Layout from '../components/Layout';
-import SidebarMenu from '../components/SideBar';
+import SidebarMenu from '../components/Sidebar';
 
-import Project from "./project"
 import FolderTree from "../components/repository/FolderTree";
 
 const Repository = () => {
