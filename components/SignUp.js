@@ -41,7 +41,7 @@ const SignUp = () => {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles['logo-wrapper']}>
-          <Image src="/logo2.png" alt="logo" layout="fill" objectFit="contain" />
+          <Image src="/logo.png" alt="logo" layout="fill" objectFit="contain" />
         </div>
 
         {needsEmailVerification ? (

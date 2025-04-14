@@ -46,7 +46,7 @@ const Layout = ({ children = null }) => {
             <Link href="/">
               <a>
                 <Image
-                  src="/logo2.png"
+                  src="/logo.png"
                   alt="logo"
                   layout="fill"
                   objectFit="contain"

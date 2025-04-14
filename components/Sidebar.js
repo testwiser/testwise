@@ -1,50 +1,55 @@
+import {
+  LayoutDashboard,
+  Layers,
+  Inbox,
+  User,
+  Rocket,
+  BookText,
+  LifeBuoy,
+} from "lucide-react";
+
 import { Sidebar } from "flowbite-react";
-import { BiBuoy } from "react-icons/bi";
-import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards } from "react-icons/hi";
 
+const BlueIcon = (Icon) => {
+  const WrappedIcon = () => <Icon className="text-blue-500" />;
+  WrappedIcon.displayName = `BlueIcon(${Icon.displayName || Icon.name || 'Icon'})`;
+  return WrappedIcon;
+};
 
-
-const SidebarMenu = ({ children = null }) => {
+const SidebarMenu = () => {
   return (
-    <Sidebar aria-label="Sidebar with content separator example">
+    <Sidebar aria-label="Sidebar with content separator example" className="text-blue-500">
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
+          <Sidebar.Item href="#" icon={BlueIcon(LayoutDashboard)}>
             Dashboard
           </Sidebar.Item>
-          <Sidebar.Item href="/repository" icon={HiViewBoards}>
+          <Sidebar.Item href="/repository" icon={BlueIcon(Layers)}>
             Repository
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiInbox}>
+          <Sidebar.Item href="#" icon={BlueIcon(Inbox)}>
             Inbox
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiUser}>
+          <Sidebar.Item href="#" icon={BlueIcon(User)}>
             Users
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiShoppingBag}>
-            Products
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiArrowSmRight}>
-            Sign In
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiTable}>
-            Sign Up
-          </Sidebar.Item>
         </Sidebar.ItemGroup>
+
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
+          <Sidebar.Item href="#" icon={BlueIcon(Rocket)}>
             Upgrade to Pro
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiViewBoards}>
+          <Sidebar.Item href="#" icon={BlueIcon(BookText)}>
             Documentation
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={BiBuoy}>
+          <Sidebar.Item href="#" icon={BlueIcon(LifeBuoy)}>
             Help
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>
     </Sidebar>
   );
-}
+};
+
 
 export default SidebarMenu

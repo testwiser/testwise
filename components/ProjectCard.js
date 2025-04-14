@@ -7,7 +7,7 @@ const ProjectCard = () => {
           <Card
       className="max-w-xs"
       imgAlt="Project image"
-      imgSrc='./shoes.jpeg'
+      imgSrc='./project.jpg'
     >
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         Noteworthy technology acquisitions 2021
