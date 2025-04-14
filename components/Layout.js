@@ -1,24 +1,17 @@
+import { Menu } from '@headlessui/react';
+import { HomeIcon, UserIcon, LogoutIcon, CogIcon } from '@heroicons/react/outline';
 /* eslint-disable @next/next/no-img-element */
 import styles from '../styles/components/Layout.module.css';
-import stylesHome from '../styles/pages/Home.module.css';
-
-
 import React from 'react';
 import { useUserContext } from '../UserProvider';
 import { useSignOut } from '@nhost/nextjs'
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu } from '@headlessui/react';
-import {
-  HomeIcon,
-  LogoutIcon,
-  UserIcon,
-} from '@heroicons/react/outline';
 import Avatar from './Avatar';
 
 const Layout = ({ children = null }) => {
   const { user } = useUserContext();
-  const { signOut } = useSignOut()
+  const { signOut } = useSignOut();
 
   const menuItems = [
     {
