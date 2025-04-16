@@ -30,7 +30,7 @@ const Home = () => {
 
       </div>
       <div className='float-right mr-10'>
-        <button className="btn">
+      <button className="btn btn-soft btn-accent glass">
           Add Project
           <div className='right-0'>
             <a>

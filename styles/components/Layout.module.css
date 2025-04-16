@@ -64,16 +64,13 @@
   min-width: 200px; 
   margin-top: 10px; 
   padding: 10px 0;
+  right: 0;
+  transform-origin: top left;
+  overflow: hidden;
 }
 
 .menu-open {
   display: block;
-}
-
-.menu-item {
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background-color 0.2s;
 }
 
 .menu-item:hover {
@@ -129,26 +126,6 @@
   transform: scale(0.95, 0.95);
 }
 
-.menu-items-container {
-  position: absolute;
-  right: 0; /* Align the menu to the left of the button */
-  width: 18rem;
-  overflow: hidden;
-  margin-top: 0.25rem;
-  transform-origin: top left; /* Change transform-origin to top left */
-  background-color: rgb(255, 255, 255);
-  border-radius: 0.375rem;
-
-  box-shadow: 0 0 0 0px #fff, 0 0 0 calc(1px) rgb(0 0 0 / 0.05), 0 0 #0000,
-    0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
-}
-
-.menu-items-container:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
 .menu-header {
   display: flex;
   align-items: center;
@@ -180,6 +157,11 @@
 .menu-items {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  transform-origin: top left;
+  right: 0;
+  position: absolute;
+  overflow: hidden;
+
 }
 
 .menu-item {
